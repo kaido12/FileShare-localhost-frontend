@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* create component class */
 
-/* @layer components{
-  .className{
-    @apply <tailwind classes>
+@layer components{
+  .btn{
+    @apply w-44 p-4 my-5 bg-gray-800 rounded-2xl hover:bg-green-800 focus:outline-none ease-in-out duration-200 ;
   }
-} */
+}
