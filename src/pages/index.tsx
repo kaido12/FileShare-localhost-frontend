@@ -1,6 +1,6 @@
 import DropzoneComponent from "@components/DropzoneComponent";
 import RenderFile from "@components/RenderFile";
-import { useState } from "react";
+import  { useState }  from "react";
 import axios from "axios";
 import DownloadFile from "@components/DownloadFile";
 import EmailForm from "@components/EmailForm";
@@ -12,6 +12,7 @@ export default function Home() {
   const [uploadState, setUploadState] = useState<
     "Upload"|"Uploaded" | "Uploading" | "Upload Failed"
   >("Upload");
+
 
   const resetComponent = () => {
     setFile(null);
@@ -29,6 +30,7 @@ export default function Home() {
         data: formData,
         url: "api/files/upload",
         headers: {
+          'Access-Control-Allow-Origin': '*',
           "Content-Type": "multipart/form-data",
         },
       });
