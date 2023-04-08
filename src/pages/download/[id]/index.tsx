@@ -11,7 +11,7 @@ const index: NextPage<{file: IFile}> = ({ file: {format, name, sizeInBytes,id} }
       responseType: "blob",
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
+        'Content-Type': "multipart/form-data",
       },  
     });
     fileDownload(data, name);
