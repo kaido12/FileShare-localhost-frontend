@@ -7,8 +7,12 @@ import fileDownload from "js-file-download";
 const index: NextPage<{file: IFile}> = ({ file: {format, name, sizeInBytes,id} }) => {
 
   const handleDownload = async() => {
-    const {data} = await axios.get(`/api/files/${id}/download`, {
+    const {data} = await axios.get(`/api/files/${id}/download`,{
       responseType: "blob",
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },  
     });
     fileDownload(data, name);
   };
